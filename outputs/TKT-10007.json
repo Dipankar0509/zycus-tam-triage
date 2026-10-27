@@ -45,7 +45,7 @@
     },
     {
       "step": 4,
-      "thought": "Reviewing the support SLA policy for Business plan to ensure proper routing and escalation compliance.",
+      "thought": "I have the authoritative account details (Business tier, At Risk health) and have gathered relevant KB info and ticket history. The next step is to review the support policy for the Business tier to confirm SLA expectations for a P3 How-To issue before finalizing the triage decision.",
       "action": "check_support_policy",
       "tool_called": "check_support_policy",
       "tool_args": {
@@ -55,7 +55,7 @@
     },
     {
       "step": 5,
-      "thought": "I have authoritative account details (Business tier, At Risk, $24k ARR, TAM Olivia Grant), relevant KB context (though not a direct match for the SCHEMA_MISMATCH error), recent ticket history (no duplicate), and support policy for Business tier. The error appears after a recent update and affects all users, indicating a likely product bug that requires engineering investigation. Given the customer's At Risk status and P3 urgency, I should finalize the triage by creating an internal incident, assigning it to CloudSync engineering with elevated priority, and notifying the TAM for proactive communication.",
+      "thought": "I have gathered the required account context, knowledge base playbooks, and ticket history. I am ready to finalize the triage decision.",
       "action": "finalize_triage",
       "tool_called": "finalize_triage",
       "tool_args": {},

@@ -16,7 +16,7 @@
   "reasoning_trace": [
     {
       "step": 1,
-      "thought": "I need the authoritative account details (plan tier, health status, assigned TAM) to ensure correct triage and policy handling. This is the first required step before any other lookups.",
+      "thought": "First I need to get the authoritative account details for Acme Corp to confirm plan tier, health status, and assigned TAM, as account IDs may be outdated. This will guide subsequent steps.",
       "action": "resolve_account",
       "tool_called": "resolve_account",
       "tool_args": {

@@ -16,7 +16,7 @@
   "reasoning_trace": [
     {
       "step": 1,
-      "thought": "I need the authoritative account details (plan tier, ARR, health status, TAM) to ensure correct triage and verify the customer's support tier before proceeding.",
+      "thought": "I need the authoritative account details (plan tier, health status, TAM) for Cybertronics Ltd to ensure accurate triage. This will also confirm the correct account ID and provide context for any policy checks.",
       "action": "resolve_account",
       "tool_called": "resolve_account",
       "tool_args": {
@@ -45,7 +45,7 @@
     },
     {
       "step": 4,
-      "thought": "We have authoritative account details (Business tier, At Risk, high ARR) and relevant KB info indicating the likely cause is IDP group mapping. We also reviewed recent tickets and found no duplicate for this issue. Next, we should verify the support policy and SLA for the Business tier to ensure proper handling and escalation for a P2 Data Loss issue before finalizing triage.",
+      "thought": "Reviewing the support SLA policy for Business plan to ensure proper routing and escalation compliance.",
       "action": "check_support_policy",
       "tool_called": "check_support_policy",
       "tool_args": {
@@ -55,7 +55,7 @@
     },
     {
       "step": 5,
-      "thought": "I have gathered the required account context, knowledge base playbooks, and ticket history. I am ready to finalize the triage decision.",
+      "thought": "I have authoritative account details (Business tier, At Risk, $240k ARR, TAM Fatima Al-Rashid). The KB indicates the issue is likely due to the new users' IDP group not being mapped to an AnalyticsHub role. No duplicate tickets exist, and the support policy for Business tier has been reviewed. The next step is to finalize triage, recommending assignment to the SSO specialist queue, escalation to the TAM, and noting the high risk status.",
       "action": "finalize_triage",
       "tool_called": "finalize_triage",
       "tool_args": {},

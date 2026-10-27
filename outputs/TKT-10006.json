@@ -11,12 +11,12 @@
   "duplicate_status": false,
   "duplicate_ticket_id": null,
   "needs_clarification": false,
-  "customer_reply": "Dear Rekall Industries Team,\n\nThank you for contacting Technical Support regarding 'Integration issue: SecureVault + HubSpot'. Our team has reviewed your request under your Starter plan.\n\nInitial Investigation & Recommendations:\nBased on our diagnostic review, please verify the following recommended steps:\n- # SecureVault — Product Reference\n\nWe have categorized this as P3 and routed it to our Identity & Security Engineering. You will receive further updates shortly.\n\nBest regards,\nTechnical Account Management Team",
+  "customer_reply": "Dear Rekall Industries Team,\n\nThank you for contacting Technical Support regarding 'Integration issue: SecureVault + HubSpot'. Our team has reviewed your request under your Starter plan.\n\nInitial Investigation & Recommendations:\nBased on our diagnostic review, please verify the following recommended steps:\n- ## Common Integration Errors\n\nWe have categorized this as P3 and routed it to our Identity & Security Engineering. You will receive further updates shortly.\n\nBest regards,\nTechnical Account Management Team",
   "internal_note": "INTERNAL TAM / SUPPORT NOTE:\n- Customer: Rekall Industries (ID: ACC-7463) | Plan: Starter | ARR: $48,000\n- Account Health: At Risk | TAM: Rohan Mehta\n- Triage: Category=Integration, Priority=P3, Routed To=Identity & Security Engineering\n- Escalation: No\n- TAM Alert: YES - Notify Rohan Mehta\n- Context: Unique ticket. Account is At Risk/Churning - monitor closely.",
   "reasoning_trace": [
     {
       "step": 1,
-      "thought": "I need the authoritative account details (plan tier, ARR, health status, TAM) for Rekall Industries (ACC-5073) before proceeding with any knowledge base search or further triage.",
+      "thought": "The customer on the ticket is 'Rekall Industries'. I must resolve the account to check their plan tier, contract ARR, account health, and assigned TAM.",
       "action": "resolve_account",
       "tool_called": "resolve_account",
       "tool_args": {
@@ -27,13 +27,13 @@
     },
     {
       "step": 2,
-      "thought": "The ticket describes technical symptoms regarding SecureVault. I need to search the knowledge base for troubleshooting playbooks and error codes.",
+      "thought": "I have the authoritative account details for Rekall Industries (Starter tier, at risk health). The next step is to find relevant knowledge base information about the INVALID_CONFIGURATION error and any known issues with SecureVault's HubSpot integration, so I can determine if this is a known bug, configuration issue, or requires further escalation.",
       "action": "search_kb",
       "tool_called": "search_kb",
       "tool_args": {
-        "query": "SecureVault Integration issue: SecureVault + HubSpot"
+        "query": "SecureVault HubSpot integration INVALID_CONFIGURATION missing required field 'endpoint' error"
       },
-      "observation": "KB Search Results:\n[SecureVault — Product Reference - SecureVault — Product Reference]: # SecureVault — Product Reference...\n[SecureVault — Product Reference - Overview]: ## Overview\n\nSecureVault is an enterprise secrets and key management platform. It provides centralised storage for API keys, credentials, certificates, and encryption keys, with audit logging, role-based access control, and integrations with major cl...\n[SecureVault — Product Reference - Core Modules]: ## Core Modules\n\n### Authentication\n\nSecureVault supports multiple authentication methods:\n- **Username + password** with MFA (TOTP or hardware key)\n- **SSO via SAML 2.0** (Okta, Azure AD, Google Workspace, Ping Identity)\n- **Machine-to-machine:** se..."
+      "observation": "KB Search Results:\n[Troubleshooting: Performance Issues - Common Integration Errors]: ## Common Integration Errors\n\n| Error | Integration | Cause | Fix |\n|-------|------------|-------|-----|\n| `403 Forbidden` | Salesforce | OAuth token lacks `api` scope | Regenerate token with correct scopes |\n| `404 Not Found` on valid endpoint | Any...\n[Troubleshooting: Performance Issues - Salesforce Integration: Common Issues]: ## Salesforce Integration: Common Issues\n\n1. **`refresh_token` scope missing** — the Connected App must have `api`, `refresh_token`, and `offline_access` scopes. Scopes cannot be added to an existing OAuth token; revoke and re-authorise.\n2. **Field A...\n[Troubleshooting: Authentication & SSO - Error Reference]: ## Error Reference\n\n| Error Code | Product(s) | Meaning | First Action |\n|------------|-----------|---------|-------------|\n| `AUTH_TOKEN_EXPIRED` | All | Token TTL exceeded | Re-authenticate or rotate service token |\n| `403 Forbidden: insufficient_s..."
     },
     {
       "step": 3,
@@ -45,16 +45,6 @@
     },
     {
       "step": 4,
-      "thought": "I have the authoritative account details (Starter tier, $48k ARR, At Risk) and have reviewed recent ticket history. To determine the appropriate response time and escalation path for a P3 bug on a Starter tier account, I need to check the support policy for this tier before finalizing the triage.",
-      "action": "check_support_policy",
-      "tool_called": "check_support_policy",
-      "tool_args": {
-        "tier": "Starter"
-      },
-      "observation": "Support Policy for Starter:\n## Pricing & Limits by Plan\n\n| Feature | Starter | Professional | Business | Enterprise |\n|---------|---------|--------------|----------|------------|\n| Storage synced | 100 GB | 1 TB | 10 TB | Unlimited |\n| Sync endpoints | 2 | 10 | 50 | Unlimited |\n| File versioning | 5 versions | 25 versions | 10..."
-    },
-    {
-      "step": 5,
       "thought": "I have gathered the required account context, knowledge base playbooks, and ticket history. I am ready to finalize the triage decision.",
       "action": "finalize_triage",
       "tool_called": "finalize_triage",

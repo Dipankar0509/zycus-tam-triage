@@ -16,7 +16,7 @@
   "reasoning_trace": [
     {
       "step": 1,
-      "thought": "I need the authoritative account details (plan tier, ARR, health status, and assigned TAM) for Cybertronics Ltd (ACC-3200) before proceeding with knowledge base searches or other actions.",
+      "thought": "We need the authoritative account details (plan tier, health, TAM) before proceeding with knowledge base searches or other actions.",
       "action": "resolve_account",
       "tool_called": "resolve_account",
       "tool_args": {
@@ -37,7 +37,7 @@
     },
     {
       "step": 3,
-      "thought": "Customer Cybertronics Ltd is At Risk with $240,000 ARR. I must check recent ticket history to detect duplicates and evaluate churn risk.",
+      "thought": "I have the authoritative account details (Business tier, at risk health) and initial KB search results, but they don't directly address configuring Data Sources, date filtering, permissions, or Snowflake integration. I should check the ticket history for any prior related tickets or known issues before finalizing the triage.",
       "action": "get_ticket_history",
       "tool_called": "get_ticket_history",
       "tool_args": {},
@@ -45,7 +45,7 @@
     },
     {
       "step": 4,
-      "thought": "I have the authoritative account context (Business tier, $240k ARR, At Risk) and have gathered relevant KB and ticket history. The request is a product usage question about configuring Data Sources, not a bug. Before finalizing triage, I should verify the support policy/SLA for a Business tier customer with a P3 urgency to ensure appropriate response time and escalation handling.",
+      "thought": "Reviewing the support SLA policy for Business plan to ensure proper routing and escalation compliance.",
       "action": "check_support_policy",
       "tool_called": "check_support_policy",
       "tool_args": {

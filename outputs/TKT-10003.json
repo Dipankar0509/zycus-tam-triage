@@ -45,7 +45,7 @@
     },
     {
       "step": 4,
-      "thought": "I have the authoritative account details (Starter tier, At Risk health) and have reviewed the knowledge base and recent ticket history. The next step is to verify the support policy and SLA for a Starter tier P3 issue before finalizing the triage.",
+      "thought": "I have the authoritative account details (Starter tier, At Risk) and have gathered relevant KB info and ticket history. The next step is to review the support policy for the Starter tier to understand SLA and escalation options before finalizing the triage.",
       "action": "check_support_policy",
       "tool_called": "check_support_policy",
       "tool_args": {

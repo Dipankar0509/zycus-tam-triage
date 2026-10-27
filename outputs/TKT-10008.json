@@ -16,7 +16,7 @@
   "reasoning_trace": [
     {
       "step": 1,
-      "thought": "The customer on the ticket is 'Cascade Data'. I must resolve the account to check their plan tier, contract ARR, account health, and assigned TAM.",
+      "thought": "I need the authoritative account details for Cascade Data (ACC-5272) to understand their tier, health status, and assigned TAM before proceeding with any knowledge base searches or policy checks.",
       "action": "resolve_account",
       "tool_called": "resolve_account",
       "tool_args": {
@@ -37,6 +37,16 @@
     },
     {
       "step": 3,
+      "thought": "I have the authoritative account details (Professional tier) and basic product info, but I need to understand the SLA and escalation expectations for a Professional tier customer to correctly prioritize this performance issue and determine the appropriate urgency level.",
+      "action": "check_support_policy",
+      "tool_called": "check_support_policy",
+      "tool_args": {
+        "tier": "Professional"
+      },
+      "observation": "Support Policy for Professional:\n## Pricing & Limits by Plan\n\n| Feature | Starter | Professional | Business | Enterprise |\n|---------|---------|--------------|----------|------------|\n| Storage synced | 100 GB | 1 TB | 10 TB | Unlimited |\n| Sync endpoints | 2 | 10 | 50 | Unlimited |\n| File versioning | 5 versions | 25 versions | 10..."
+    },
+    {
+      "step": 4,
       "thought": "I have gathered the required account context, knowledge base playbooks, and ticket history. I am ready to finalize the triage decision.",
       "action": "finalize_triage",
       "tool_called": "finalize_triage",

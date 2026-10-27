@@ -16,7 +16,7 @@
   "reasoning_trace": [
     {
       "step": 1,
-      "thought": "I need the authoritative account details (tier, ARR, health, TAM) to properly triage this billing-related webhook delivery issue, so I will resolve the account first.",
+      "thought": "We need authoritative account details (tier, ARR, health, TAM) to guide triage and ensure correct handling of the billing-related webhook delivery issue.",
       "action": "resolve_account",
       "tool_called": "resolve_account",
       "tool_args": {
@@ -37,7 +37,7 @@
     },
     {
       "step": 3,
-      "thought": "Customer Gavin Belson Co is At Risk with $96,000 ARR. I must check recent ticket history to detect duplicates and evaluate churn risk.",
+      "thought": "We have authoritative account details and some KB references, but need to see if this webhook delivery issue has been reported before for this account and understand any patterns or prior resolutions. Fetching the ticket history will help determine if this is a recurring problem and guide appropriate escalation.",
       "action": "get_ticket_history",
       "tool_called": "get_ticket_history",
       "tool_args": {},
