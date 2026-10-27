@@ -1,0 +1,65 @@
+{
+  "ticket_id": "TKT-10007",
+  "account_id": "ACC-4507",
+  "company": "Nakatomi Trading",
+  "category": "How-To",
+  "priority": "P3",
+  "routing": "Technical Support Tier 2",
+  "escalation": false,
+  "tam_notification": true,
+  "tam_name": "Olivia Grant",
+  "duplicate_status": false,
+  "duplicate_ticket_id": null,
+  "needs_clarification": false,
+  "customer_reply": "Dear Nakatomi Trading Team,\n\nThank you for contacting Technical Support regarding 'Error when accessing Bandwidth Limits in CloudSync'. Our team has reviewed your request under your Business plan.\n\nInitial Investigation & Recommendations:\nBased on our diagnostic review, please verify the following recommended steps:\n- ## Pricing & Limits by Plan\n\nWe have categorized this as P3 and routed it to our Technical Support Tier 2. You will receive further updates shortly.\n\nBest regards,\nTechnical Account Management Team",
+  "internal_note": "INTERNAL TAM / SUPPORT NOTE:\n- Customer: Nakatomi Trading (ID: ACC-4507) | Plan: Business | ARR: $24,000\n- Account Health: At Risk | TAM: Olivia Grant\n- Triage: Category=How-To, Priority=P3, Routed To=Technical Support Tier 2\n- Escalation: No\n- TAM Alert: YES - Notify Olivia Grant\n- Context: Unique ticket. Account is At Risk/Churning - monitor closely.",
+  "reasoning_trace": [
+    {
+      "step": 1,
+      "thought": "I need the authoritative account details for Nakatomi Trading (ACC-3536) to confirm tier, health, and assigned TAM before proceeding with knowledge base search or other actions.",
+      "action": "resolve_account",
+      "tool_called": "resolve_account",
+      "tool_args": {
+        "company": "Nakatomi Trading",
+        "acc_id": "ACC-3536"
+      },
+      "observation": "Account resolved: ACC-4507 (Nakatomi Trading). Tier: Business, ARR: $24,000, Health: At Risk, Usage Trend: Stable, TAM: Olivia Grant, Renewal: 2027-04-16, Open Tickets: 2, Escalation Notes: ['Customer skipped last two scheduled QBRs', 'IT team flagged integration reliability concerns', 'Decision maker considering competing vendor evaluation']"
+    },
+    {
+      "step": 2,
+      "thought": "The ticket describes technical symptoms regarding CloudSync. I need to search the knowledge base for troubleshooting playbooks and error codes.",
+      "action": "search_kb",
+      "tool_called": "search_kb",
+      "tool_args": {
+        "query": "CloudSync Error when accessing Bandwidth Limits in CloudSync"
+      },
+      "observation": "KB Search Results:\n[CloudSync — Product Reference - Pricing & Limits by Plan]: ## Pricing & Limits by Plan\n\n| Feature | Starter | Professional | Business | Enterprise |\n|---------|---------|--------------|----------|------------|\n| Storage synced | 100 GB | 1 TB | 10 TB | Unlimited |\n| Sync endpoints | 2 | 10 | 50 | Unlimited |...\n[CloudSync — Product Reference - Core Modules]: ## Core Modules\n\n### File Sync\n\nBidirectional sync between configured endpoints. Supports Amazon S3, Azure Blob, Google Cloud Storage, on-premise NAS, and desktop clients (Windows, macOS).\n\n**Sync modes:**\n- `realtime` — changes propagate within seco...\n[CloudSync — Product Reference - Overview]: ## Overview\n\nCloudSync is a real-time file and data synchronisation platform that keeps content consistent across cloud storage providers, on-premise systems, and end-user devices. It supports conflict resolution, selective sync, bandwidth throttling..."
+    },
+    {
+      "step": 3,
+      "thought": "Customer Nakatomi Trading is At Risk with $24,000 ARR. I must check recent ticket history to detect duplicates and evaluate churn risk.",
+      "action": "get_ticket_history",
+      "tool_called": "get_ticket_history",
+      "tool_args": {},
+      "observation": "Found 5 recent tickets:\nTKT-10164 (Closed - P4): Dashboard loading times unacceptable — CloudSync\nTKT-10199 (In Progress - P2): Billing question about SecureVault invoice\nTKT-10342 (Closed - P3): Unable to connect AnalyticsHub to Exports"
+    },
+    {
+      "step": 4,
+      "thought": "Reviewing the support SLA policy for Business plan to ensure proper routing and escalation compliance.",
+      "action": "check_support_policy",
+      "tool_called": "check_support_policy",
+      "tool_args": {
+        "tier": "Business"
+      },
+      "observation": "Support Policy for Business:\n## Pricing & Limits by Plan\n\n| Feature | Starter | Professional | Business | Enterprise |\n|---------|---------|--------------|----------|------------|\n| Storage synced | 100 GB | 1 TB | 10 TB | Unlimited |\n| Sync endpoints | 2 | 10 | 50 | Unlimited |\n| File versioning | 5 versions | 25 versions | 10..."
+    },
+    {
+      "step": 5,
+      "thought": "I have authoritative account details (Business tier, At Risk, $24k ARR, TAM Olivia Grant), relevant KB context (though not a direct match for the SCHEMA_MISMATCH error), recent ticket history (no duplicate), and support policy for Business tier. The error appears after a recent update and affects all users, indicating a likely product bug that requires engineering investigation. Given the customer's At Risk status and P3 urgency, I should finalize the triage by creating an internal incident, assigning it to CloudSync engineering with elevated priority, and notifying the TAM for proactive communication.",
+      "action": "finalize_triage",
+      "tool_called": "finalize_triage",
+      "tool_args": {},
+      "observation": "All critical account, KB, and history context gathered. Proceeding to final triage decision."
+    }
+  ]
+}

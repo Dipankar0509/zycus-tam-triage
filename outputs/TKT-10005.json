@@ -1,0 +1,65 @@
+{
+  "ticket_id": "TKT-10005",
+  "account_id": "ACC-5396",
+  "company": "Cybertronics Ltd",
+  "category": "Integration",
+  "priority": "P1",
+  "routing": "Identity & Security Engineering",
+  "escalation": true,
+  "tam_notification": true,
+  "tam_name": "Fatima Al-Rashid",
+  "duplicate_status": false,
+  "duplicate_ticket_id": null,
+  "needs_clarification": false,
+  "customer_reply": "Dear Cybertronics Ltd Team,\n\nThank you for contacting Technical Support regarding 'SSO configuration not working for new users — AnalyticsHub'. Our team has reviewed your request under your Business plan.\n\nInitial Investigation & Recommendations:\nBased on our diagnostic review, please verify the following recommended steps:\n- ## New Users Cannot Authenticate via SSO\n\nWe have categorized this as P1 and routed it to our Identity & Security Engineering. You will receive further updates shortly.\n\nBest regards,\nTechnical Account Management Team",
+  "internal_note": "INTERNAL TAM / SUPPORT NOTE:\n- Customer: Cybertronics Ltd (ID: ACC-5396) | Plan: Business | ARR: $240,000\n- Account Health: At Risk | TAM: Fatima Al-Rashid\n- Triage: Category=Integration, Priority=P1, Routed To=Identity & Security Engineering\n- Escalation: YES - Flagged for immediate escalation\n- TAM Alert: YES - Notify Fatima Al-Rashid\n- Context: Unique ticket. Account is At Risk/Churning - monitor closely.",
+  "reasoning_trace": [
+    {
+      "step": 1,
+      "thought": "I need the authoritative account details (plan tier, ARR, health status, TAM) to ensure correct triage and verify the customer's support tier before proceeding.",
+      "action": "resolve_account",
+      "tool_called": "resolve_account",
+      "tool_args": {
+        "company": "Cybertronics Ltd",
+        "acc_id": "ACC-1964"
+      },
+      "observation": "Account resolved: ACC-5396 (Cybertronics Ltd). Tier: Business, ARR: $240,000, Health: At Risk, Usage Trend: Stable, TAM: Fatima Al-Rashid, Renewal: 2026-08-31, Open Tickets: 10, Escalation Notes: ['3 consecutive P1 tickets in the last 30 days', 'Negative sentiment detected in recent support tickets', 'Champion left the company — no replacement identified yet']"
+    },
+    {
+      "step": 2,
+      "thought": "The ticket describes technical symptoms regarding AnalyticsHub. I need to search the knowledge base for troubleshooting playbooks and error codes.",
+      "action": "search_kb",
+      "tool_called": "search_kb",
+      "tool_args": {
+        "query": "AnalyticsHub SSO configuration not working for new users — AnalyticsHub"
+      },
+      "observation": "KB Search Results:\n[Troubleshooting: Authentication & SSO - New Users Cannot Authenticate via SSO]: ## New Users Cannot Authenticate via SSO\n\n**Symptom:** Existing users log in fine; new joiners get an error.\n\n**Most common cause:** The new user's IDP group has not been mapped to a product role.\n\n**Resolution:**\n1. Log in to the product as an admin...\n[Onboarding Guide — New Customers & Users - Recommended Training Path by Role]: ## Recommended Training Path by Role\n\n### Technical users (engineers, IT admins)\n1. Platform architecture overview (30 min) — Learning Centre\n2. API & authentication (45 min) — Learning Centre\n3. Product-specific deep dive (1–2 hours each) — Learning...\n[Onboarding Guide — New Customers & Users - New Organisation Onboarding Checklist]: ## New Organisation Onboarding Checklist\n\nComplete these steps within the first 7 days to ensure a smooth rollout.\n\n### Step 1: Account setup (Day 1)\n\n- [ ] Verify the admin email and accept the invitation\n- [ ] Set organisation name and region: Sett..."
+    },
+    {
+      "step": 3,
+      "thought": "Customer Cybertronics Ltd is At Risk with $240,000 ARR. I must check recent ticket history to detect duplicates and evaluate churn risk.",
+      "action": "get_ticket_history",
+      "tool_called": "get_ticket_history",
+      "tool_args": {},
+      "observation": "Found 5 recent tickets:\nTKT-10009 (Resolved - P3): How do I configure Data Sources in AnalyticsHub?\nTKT-10046 (Resolved - P3): New team member onboarding to SecureVault\nTKT-10206 (Closed - P4): Data not syncing between SecureVault and BigQuery"
+    },
+    {
+      "step": 4,
+      "thought": "We have authoritative account details (Business tier, At Risk, high ARR) and relevant KB info indicating the likely cause is IDP group mapping. We also reviewed recent tickets and found no duplicate for this issue. Next, we should verify the support policy and SLA for the Business tier to ensure proper handling and escalation for a P2 Data Loss issue before finalizing triage.",
+      "action": "check_support_policy",
+      "tool_called": "check_support_policy",
+      "tool_args": {
+        "tier": "Business"
+      },
+      "observation": "Support Policy for Business:\n## Pricing & Limits by Plan\n\n| Feature | Starter | Professional | Business | Enterprise |\n|---------|---------|--------------|----------|------------|\n| Storage synced | 100 GB | 1 TB | 10 TB | Unlimited |\n| Sync endpoints | 2 | 10 | 50 | Unlimited |\n| File versioning | 5 versions | 25 versions | 10..."
+    },
+    {
+      "step": 5,
+      "thought": "I have gathered the required account context, knowledge base playbooks, and ticket history. I am ready to finalize the triage decision.",
+      "action": "finalize_triage",
+      "tool_called": "finalize_triage",
+      "tool_args": {},
+      "observation": "All critical account, KB, and history context gathered. Proceeding to final triage decision."
+    }
+  ]
+}

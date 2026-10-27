@@ -1,0 +1,65 @@
+{
+  "ticket_id": "TKT-10000",
+  "account_id": "ACC-1881",
+  "company": "Massive Dynamic",
+  "category": "Feature Request",
+  "priority": "P4",
+  "routing": "Product Management",
+  "escalation": false,
+  "tam_notification": true,
+  "tam_name": "Fatima Al-Rashid",
+  "duplicate_status": false,
+  "duplicate_ticket_id": null,
+  "needs_clarification": false,
+  "customer_reply": "Dear Massive Dynamic Team,\n\nThank you for contacting Technical Support regarding 'Request: bulk archive entries in DataBridge Pro Data Ingestion'. Our team has reviewed your request under your Starter plan.\n\nInitial Investigation & Recommendations:\nBased on our diagnostic review, please verify the following recommended steps:\n- ## Pricing & Limits by Plan\n\nWe have categorized this as P4 and routed it to our Product Management. You will receive further updates shortly.\n\nBest regards,\nTechnical Account Management Team",
+  "internal_note": "INTERNAL TAM / SUPPORT NOTE:\n- Customer: Massive Dynamic (ID: ACC-1881) | Plan: Starter | ARR: $12,000\n- Account Health: At Risk | TAM: Fatima Al-Rashid\n- Triage: Category=Feature Request, Priority=P4, Routed To=Product Management\n- Escalation: No\n- TAM Alert: YES - Notify Fatima Al-Rashid\n- Context: Unique ticket. Account is At Risk/Churning - monitor closely.",
+  "reasoning_trace": [
+    {
+      "step": 1,
+      "thought": "I need the authoritative account details (tier, ARR, health status, assigned TAM) to properly triage this billing-related bulk archive request, so I will resolve the account first.",
+      "action": "resolve_account",
+      "tool_called": "resolve_account",
+      "tool_args": {
+        "company": "Massive Dynamic",
+        "acc_id": "ACC-2535"
+      },
+      "observation": "Account resolved: ACC-1881 (Massive Dynamic). Tier: Starter, ARR: $12,000, Health: At Risk, Usage Trend: Inactive, TAM: Fatima Al-Rashid, Renewal: 2027-03-01, Open Tickets: 11, Escalation Notes: ['Negative sentiment detected in recent support tickets']"
+    },
+    {
+      "step": 2,
+      "thought": "I have the authoritative account details (Starter tier, ARR $12,000, At Risk health). The request is for a bulk archive feature, which is a product capability question rather than a billing issue. I need to verify if DataBridge Pro supports bulk archiving, any existing limits, or if this is a paid feature, by searching the knowledge base.",
+      "action": "search_kb",
+      "tool_called": "search_kb",
+      "tool_args": {
+        "query": "DataBridge Pro bulk archive entries Data Ingestion feature limit"
+      },
+      "observation": "KB Search Results:\n[DataBridge Pro — Product Reference - Pricing & Limits by Plan]: ## Pricing & Limits by Plan\n\n| Feature | Starter | Professional | Business | Enterprise |\n|---------|---------|--------------|----------|------------|\n| Pipelines | 5 | 25 | 100 | Unlimited |\n| Records/month | 5M | 50M | 500M | Unlimited |\n| Connecto...\n[DataBridge Pro — Product Reference - Overview]: ## Overview\n\nDataBridge Pro is a managed data integration platform that enables organisations to ingest, transform, and route data between internal systems and third-party services. It supports batch and streaming pipelines, schema validation, and a ...\n[DataBridge Pro — Product Reference - DataBridge Pro — Product Reference]: # DataBridge Pro — Product Reference..."
+    },
+    {
+      "step": 3,
+      "thought": "The initial KB search returned general product information but did not address whether bulk archiving is supported or limited to certain tiers. I need to perform a more targeted KB search for bulk archive capabilities in DataBridge Pro to determine if this is a feature request, a limitation, or a paid add‑on.",
+      "action": "search_kb",
+      "tool_called": "search_kb",
+      "tool_args": {
+        "query": "DataBridge Pro bulk archive entries"
+      },
+      "observation": "KB Search Results:\n[DataBridge Pro — Product Reference - DataBridge Pro — Product Reference]: # DataBridge Pro — Product Reference...\n[DataBridge Pro — Product Reference - Overview]: ## Overview\n\nDataBridge Pro is a managed data integration platform that enables organisations to ingest, transform, and route data between internal systems and third-party services. It supports batch and streaming pipelines, schema validation, and a ...\n[Troubleshooting: Performance Issues - DataBridge Pro: Pipeline Throughput Degradation]: ## DataBridge Pro: Pipeline Throughput Degradation\n\n**Symptom:** Records processed per second drops significantly; backlog grows.\n\n**Resolution:**\n1. Check Monitoring → Pipelines → [pipeline] → Throughput graph for when degradation started.\n2. Common..."
+    },
+    {
+      "step": 4,
+      "thought": "I have authoritative account details (Starter tier, ARR $12,000, At Risk health) and have searched the knowledge base but found no specific information about bulk archiving capabilities. The next step is to check the ticket history for Massive Dynamic to see if this bulk archive request has been raised before or if there is an existing resolution or known limitation.",
+      "action": "get_ticket_history",
+      "tool_called": "get_ticket_history",
+      "tool_args": {},
+      "observation": "Found 5 recent tickets:\nTKT-10014 (Resolved - P3): Data not syncing between SecureVault and Jira\nTKT-10019 (Resolved - P3): Upgrade request: moving from Business to Enterprise\nTKT-10060 (Resolved - P3): Feature request: export Templates data to Salesforce"
+    },
+    {
+      "step": 5,
+      "thought": "I have authoritative account details (Starter tier, ARR $12,000, At Risk health) and have searched the knowledge base without finding any bulk archive capability information. Ticket history shows no prior similar requests. With this context, I can now finalize the triage, categorizing this as a product feature request that is not covered under the current Starter tier and should be escalated to the product team with a recommendation for a tier upgrade if bulk operations are required.",
+      "action": "finalize_triage",
+      "tool_called": "finalize_triage",
+      "tool_args": {},
+      "observation": "All critical account, KB, and history context gathered. Proceeding to final triage decision."
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+# Environment variables and secrets
+.env
+*.env
+*.key
+
+# Virtual environment
+.venv/
+venv/
+ENV/
+
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+
+# Local developer scripts
+python.cmd

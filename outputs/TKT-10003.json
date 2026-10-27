@@ -1,0 +1,65 @@
+{
+  "ticket_id": "TKT-10003",
+  "account_id": "ACC-1785",
+  "company": "Cyberdyne Systems",
+  "category": "How-To",
+  "priority": "P4",
+  "routing": "Technical Support Tier 2",
+  "escalation": false,
+  "tam_notification": true,
+  "tam_name": "Fatima Al-Rashid",
+  "duplicate_status": false,
+  "duplicate_ticket_id": null,
+  "needs_clarification": false,
+  "customer_reply": "Dear Cyberdyne Systems Team,\n\nThank you for contacting Technical Support regarding 'Error when accessing Authentication in SecureVault'. Our team has reviewed your request under your Starter plan.\n\nInitial Investigation & Recommendations:\nBased on our diagnostic review, please verify the following recommended steps:\n- ## Error Reference\n\nWe have categorized this as P4 and routed it to our Technical Support Tier 2. You will receive further updates shortly.\n\nBest regards,\nTechnical Account Management Team",
+  "internal_note": "INTERNAL TAM / SUPPORT NOTE:\n- Customer: Cyberdyne Systems (ID: ACC-1785) | Plan: Starter | ARR: $12,000\n- Account Health: At Risk | TAM: Fatima Al-Rashid\n- Triage: Category=How-To, Priority=P4, Routed To=Technical Support Tier 2\n- Escalation: No\n- TAM Alert: YES - Notify Fatima Al-Rashid\n- Context: Unique ticket. Account is At Risk/Churning - monitor closely.",
+  "reasoning_trace": [
+    {
+      "step": 1,
+      "thought": "I need the authoritative account details for Cyberdyne Systems (ACC-1188) to confirm tier, health, and TAM before proceeding with knowledge base search or policy checks.",
+      "action": "resolve_account",
+      "tool_called": "resolve_account",
+      "tool_args": {
+        "company": "Cyberdyne Systems",
+        "acc_id": "ACC-1188"
+      },
+      "observation": "Account resolved: ACC-1785 (Cyberdyne Systems). Tier: Starter, ARR: $12,000, Health: At Risk, Usage Trend: Stable, TAM: Fatima Al-Rashid, Renewal: 2027-05-18, Open Tickets: 0, Escalation Notes: ['Procurement team requested pricing review', 'Negative sentiment detected in recent support tickets']"
+    },
+    {
+      "step": 2,
+      "thought": "The ticket describes technical symptoms regarding SecureVault. I need to search the knowledge base for troubleshooting playbooks and error codes.",
+      "action": "search_kb",
+      "tool_called": "search_kb",
+      "tool_args": {
+        "query": "SecureVault Error when accessing Authentication in SecureVault"
+      },
+      "observation": "KB Search Results:\n[Troubleshooting: Authentication & SSO - Error Reference]: ## Error Reference\n\n| Error Code | Product(s) | Meaning | First Action |\n|------------|-----------|---------|-------------|\n| `AUTH_TOKEN_EXPIRED` | All | Token TTL exceeded | Re-authenticate or rotate service token |\n| `403 Forbidden: insufficient_s...\n[SecureVault — Product Reference - SecureVault — Product Reference]: # SecureVault — Product Reference...\n[SecureVault — Product Reference - Core Modules]: ## Core Modules\n\n### Authentication\n\nSecureVault supports multiple authentication methods:\n- **Username + password** with MFA (TOTP or hardware key)\n- **SSO via SAML 2.0** (Okta, Azure AD, Google Workspace, Ping Identity)\n- **Machine-to-machine:** se..."
+    },
+    {
+      "step": 3,
+      "thought": "Customer Cyberdyne Systems is At Risk with $12,000 ARR. I must check recent ticket history to detect duplicates and evaluate churn risk.",
+      "action": "get_ticket_history",
+      "tool_called": "get_ticket_history",
+      "tool_args": {},
+      "observation": "Found 5 recent tickets:\nTKT-10037 (Closed - P4): URGENT: Missing data in DataBridge Pro Pipeline Monitoring\nTKT-10091 (Resolved - P2): URGENT: Missing data in DataBridge Pro API\nTKT-10112 (Resolved - P3): Unable to connect CloudSync to Conflict Resolution"
+    },
+    {
+      "step": 4,
+      "thought": "I have the authoritative account details (Starter tier, At Risk health) and have reviewed the knowledge base and recent ticket history. The next step is to verify the support policy and SLA for a Starter tier P3 issue before finalizing the triage.",
+      "action": "check_support_policy",
+      "tool_called": "check_support_policy",
+      "tool_args": {
+        "tier": "Starter"
+      },
+      "observation": "Support Policy for Starter:\n## Pricing & Limits by Plan\n\n| Feature | Starter | Professional | Business | Enterprise |\n|---------|---------|--------------|----------|------------|\n| Storage synced | 100 GB | 1 TB | 10 TB | Unlimited |\n| Sync endpoints | 2 | 10 | 50 | Unlimited |\n| File versioning | 5 versions | 25 versions | 10..."
+    },
+    {
+      "step": 5,
+      "thought": "I have gathered the required account context, knowledge base playbooks, and ticket history. I am ready to finalize the triage decision.",
+      "action": "finalize_triage",
+      "tool_called": "finalize_triage",
+      "tool_args": {},
+      "observation": "All critical account, KB, and history context gathered. Proceeding to final triage decision."
+    }
+  ]
+}
